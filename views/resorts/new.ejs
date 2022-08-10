@@ -1,0 +1,110 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class = "text-center">New Resort</h1>
+    <div class="col-6 offset-3">
+        <form action="/resorts" method = 'POST' novalidate class = "validated-form" enctype = "multipart/form-data">
+            <div class = "mb-3">
+                <label class = "form-label" for="title">Title</label>
+                <input class = "form-control" type="text" name = "resort[title]" id = "name" required>
+                <div class="valid-feedback">
+                    Title looks good!
+                </div>
+            </div >
+            <div class = "mb-3">
+                <label class = "form-label" for="location">Location</label>
+                <input class = "form-control" type="text" name = "resort[location]" id = "location" required>
+                <div class="valid-feedback">
+                    Location looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="peakElevation">Peak Elavation</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="peakElevation" aria-label="in ft"
+                        name="resort[peakElevation]" required>
+                    <span class="input-group-text">ft</span>
+                    <div class="valid-feedback">
+                        Elevation seems reasonable!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="baseElevation">Base Elavation</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="baseElevation" aria-label="in ft"
+                        name="resort[baseElevation]" required>
+                    <span class="input-group-text">ft</span>
+                    <div class="valid-feedback">
+                        Elevation seems reasonable!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="verticalDrop">Vertical Drop</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="verticalDrop" aria-label="in ft"
+                        name="resort[verticalDrop]" required>
+                    <span class="input-group-text">ft</span>
+                    <div class="valid-feedback">
+                        seems reasonable!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="skiableAcreage">Skiable Acreage</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="skiableAcreage" aria-label="in acreage" 
+                        name="resort[skiableAcreage]" required>
+                    <span class="input-group-text">ac</span>
+                    <div class="valid-feedback">
+                        seems reasonable!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="totalTrails">Total Trails</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="totalTrails" aria-label="in whole number"
+                        name="resort[totalTrails]" required>
+                    <div class="valid-feedback">
+                        seems reasonable!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="totalLifts">Total Lifts</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="totalLifts" aria-label="in whole number" name="resort[totalLifts]"
+                        required>
+                    <div class="valid-feedback">
+                        seems reasonable!
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="avgAnnualSnowFall">Avg Annual Snow Fall</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="avgAnnualSnowFall" aria-label="in inches" name="resort[avgAnnualSnowFall]"
+                        required>
+                    <span class="input-group-text">in</span>
+                    <div class="valid-feedback">
+                        seems reasonable!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label class = "form-label" for="images">Upload Images</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" name = "images" id = "images" multiple>
+                    <!-- <label class="input-group-text" for="images">Upload</label> -->
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class = "btn btn-secondary">Submit</button>
+            </div>
+            
+        </form>
+        <a class = "btn btn-warning" href="/resorts">Cancel</a>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class = "text-center">Edit Resort</h1>
+    <div class="col-6 offset-3">
+        <form action="/resorts/<%= resort._id %>?_method=PUT" method="POST" novalidate class = "validated-form" enctype = "multipart/form-data">
+            <div class = "mb-3">
+                <label class = "form-label" for="title">Title</label>
+                <input class = "form-control" type="text" name = "resort[title]" id = "name" value = "<%= resort.title %>" required>
+            </div >
+            <div class = "mb-3">
+                <label class = "form-label" for="location">Location</label>
+                <input class = "form-control" type="text" name = "resort[location]" id = "location" value = "<%= resort.location %>" required>
+            </div>
+            <div class="mb-3">
+                <label class = "form-label" for="peakElevation">Peak Elevation</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id = "peakElevation" aria-label="in ft" 
+                    name = "resort[peakElevation]" value = "<%= resort.peakElevation %>"  required>
+                    <span class="input-group-text">ft</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="baseElevation">Base Elevation</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="baseElevation" aria-label="in ft" name="resort[baseElevation]"
+                        value="<%= resort.baseElevation %>" required>
+                    <span class="input-group-text">ft</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="verticalDrop">Vertical Drop</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="verticalDrop" aria-label="in ft" name="resort[verticalDrop]"
+                        value="<%= resort.verticalDrop %>" required>
+                    <span class="input-group-text">ft</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="skiableAcreage">Skiable Acreage</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="skiableAcreage" aria-label="in ft" name="resort[skiableAcreage]"
+                        value="<%= resort.skiableAcreage %>" required>
+                    <span class="input-group-text">ac</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="totalTrails">Total Trails</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="totalTrails" aria-label="in ft" name="resort[totalTrails]"
+                        value="<%= resort.totalTrails %>" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="totalLifts">Total Lifts</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="totalLifts" aria-label="in ft" name="resort[totalLifts]"
+                        value="<%= resort.totalLifts %>" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="avgAnnualSnowFall">Average Snow Fall</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="avgAnnualSnowFall" aria-label="in inches" name="resort[avgAnnualSnowFall]"
+                        value="<%= resort.avgAnnualSnowFall %>" required>
+                    <span class="input-group-text">in</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class = "form-label" for="images">Upload More Images</label>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" name = "images" id = "images" multiple>
+                    <!-- <label class="input-group-text" for="images">Upload</label> -->
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class = "btn btn-secondary">Submit</button>
+            </div>
+            
+        </form>
+        <a class = "btn btn-warning " href="/resorts/<%=resort._id%>">Cancel</a>
+    </div>
+</div>
