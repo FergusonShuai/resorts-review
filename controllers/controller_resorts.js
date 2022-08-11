@@ -2,6 +2,7 @@ const Resort = require("../models/resort");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
+const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
   const resorts = await Resort.find({});
@@ -67,6 +68,15 @@ module.exports.updateResort = async (req, res) => {
   const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   updatedResort.images.push(...imgs);
   await updatedResort.save();
+  console.log(req.body.deleteImages);
+  if (req.body.deleteImages) {
+    for (let filename of req.body.deleteImages) {
+      await cloudinary.uploader.destroy(filename);
+    }
+    await updatedResort.updateOne({
+      $pull: { images: { filename: { $in: req.body.deleteImages } } },
+    });
+  }
   // console.log(updatedResort._id);
   req.flash("success", "Resort Updated Successfully!");
   res.redirect(`/resorts/${updatedResort._id}`);

@@ -21,4 +21,5 @@
 
 ## To-do
 
-- [ ] Allow resort owner to preview uploaded pic while editing resort.
+- [x] Allow resort owner to preview uploaded pic while editing resort.
+- [ ] Implement a resort search API.
