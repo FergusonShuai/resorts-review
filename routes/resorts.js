@@ -22,6 +22,8 @@ router
     wrapAsync(resorts.createNewResort)
   ); // images is the name of the file input.
 
+router.get("/search", resorts.searchResort);
+
 router.get("/new", isLoggedIn, resorts.renderNewForm);
 
 router.get("/:id", wrapAsync(resorts.detailResort));

@@ -7,3 +7,53 @@
     width: 100%;
     height: 300px;
 }
+
+/* Home Search */
+/* Search box CSS code comes from Brad Traversy, git repo: https: //github.com/bradtraversy/codegig/blob/master/public/css/style.css*/
+.search-wrap {
+    background-size: cover;
+    padding: 1.3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-wrap h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 1.5rem;
+    text-align: center;
+}
+
+.search-form input[type='submit'] {
+    
+    color: #333;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+
+
+.search-form {
+    display: flex;
+    width: 600px;
+    align-items: center;
+}
+
+.search-form i {
+    color: #333;
+}
+
+/* Everything in the search form */
+.search-form>* {
+    padding: 0 0 0 10px;
+    line-height: 50px;
+    font-size: 1rem;
+    outline: 0;
+}
+
+input[type='search'] {
+    flex-basis: 600px;
+}

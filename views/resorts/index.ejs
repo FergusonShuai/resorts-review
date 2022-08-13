@@ -1,5 +1,14 @@
 <% layout('layouts/boilerplate') %>
     <div id="cluster-map"></div>
+    <% if (resorts.length > 10) {%>
+        <section id="search" class="search-wrap">
+            <h2>Find a Resort</h2>
+            <form action="/resorts/search" class="search-form">
+                <input type="search" name="term" placeholder="whistler, snowbird...">
+                <input type="submit" value="Search">
+            </form>
+        </section>
+    <% } %>  
     <div class="container">
         <h3></h3>
         <% for (let resort of resorts) { %>

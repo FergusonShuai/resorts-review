@@ -9,6 +9,14 @@ module.exports.index = async (req, res) => {
   res.render("resorts/index", { resorts });
 };
 
+module.exports.searchResort = async (req, res) => {
+  const { term } = req.query;
+  const resorts = await Resort.find({
+    title: { $regex: new RegExp(term, "i") },
+  });
+  res.render("resorts/index", { resorts });
+};
+
 module.exports.renderNewForm = (req, res) => {
   res.render("resorts/new");
 };
