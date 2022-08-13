@@ -11,15 +11,16 @@
 - Average Snow Fall
 - and more...
 
-![Map Display](/map_display.png)
+### Map Display & Search bar
 
-### Map Display for Easy Lookup
-
-![Detailed Page](/detailed_resort.png)
+![Map Display](/map_search.png)
 
 ### Detailed Resort Display where Registered User can Leave a Review
+
+![Detailed Page](/detailed_resort.png)
 
 ## To-do
 
 - [x] Allow resort owner to preview uploaded pic while editing resort.
-- [ ] Implement a resort search API.
+- [x] Implement a resort search API.
+- [ ] Paginate resorts display.
