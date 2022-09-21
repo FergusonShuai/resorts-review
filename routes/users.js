@@ -12,6 +12,7 @@ router.get("/login", users.renderLogin);
 
 router.post(
   "/login",
+  // a middleware provided by passport
   passport.authenticate("local", {
     failureFlash: true,
     failureRedirect: "/login",
@@ -20,5 +21,7 @@ router.post(
 );
 
 router.get("/logout", users.logout);
+
+router.get("/verify/:token", users.verify);
 
 module.exports = router;

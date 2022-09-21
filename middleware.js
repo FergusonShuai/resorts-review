@@ -9,6 +9,10 @@ module.exports.isLoggedIn = (req, res, next) => {
     req.flash("error", "Please login first.");
     return res.redirect("/login");
   }
+  if (!req.user.isVerified) {
+    req.flash("error", "Please verify email first.");
+    return res.redirect("/login");
+  }
   next();
 };
 

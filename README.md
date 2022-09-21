@@ -15,7 +15,7 @@
 
 ![Map Display](/map_search.png)
 
-### Detailed Resort Display where Registered User can Leave a Review
+### Detailed Resort Display where Email-verified User can Leave a Review
 
 ![Detailed Page](/detailed_resort.png)
 
@@ -23,4 +23,5 @@
 
 - [x] Allow resort owner to preview uploaded pic while editing resort.
 - [x] Implement a resort search API.
+- [x] User registered Email verification with JWT.
 - [ ] Paginate resorts display.
